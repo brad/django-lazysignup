@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseBadRequest
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
@@ -42,7 +41,7 @@ def convert(request, form_class=UserCreationForm,
                 # regular client.
                 if request.is_ajax():
                     return HttpResponseBadRequest(
-                        content=_(u"Already converted."))
+                        content="Already converted.")
                 else:
                     return redirect(redirect_to)
 
